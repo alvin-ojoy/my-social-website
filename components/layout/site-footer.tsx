@@ -1,12 +1,14 @@
 import { Container } from '@/components/ui/container';
 import { socialLinks } from '@/content/social-links';
+import { signatureFont } from "@/app/layout";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-white/8 py-8 sm:py-10">
+    <footer className="border-t border-neutral-200 py-8 sm:py-10">
       <Container>
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm text-white/40">© 2026 Alvin Ojoy</p>
+          <p className={`${signatureFont.className} text-xl text-[#F7C948] drop-shadow-sm`}>© 2026 Alvin Ojoy</p>
+
           <div className="flex gap-5">
             {socialLinks.map((link) => (
               <a
@@ -14,7 +16,7 @@ export function SiteFooter() {
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"
-                className="text-sm text-white/55 transition hover:text-white"
+                className="text-sm text-neutral-500 transition hover:text-neutral-900"
               >
                 {link.label}
               </a>
