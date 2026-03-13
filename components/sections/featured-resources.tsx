@@ -11,8 +11,8 @@ export function FeaturedResources() {
       <Container>
         <div className="mb-10 max-w-2xl">
           <p className="text-xs uppercase tracking-[0.3em] text-neutral-400">Free Tools</p>
-          <h2 className="mt-3 text-3xl font-semibold text-neutral-900">
-            Resources built from my real workflow
+          <h2 className="mt-3 text-4xl font-semibold text-neutral-900">
+            Resources <span className={`${signatureFont.className} text-[#F7C948] text-5xl`}>built</span> from my real workflow
           </h2>
           <p className="mt-4 text-neutral-600">
             Grab free creator downloads designed to help you shoot, edit, and organize better.

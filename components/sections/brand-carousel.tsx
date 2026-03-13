@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Container } from '@/components/ui/container';
 import { brands } from '@/content/brands';
+import { signatureFont } from '@/app/layout';
 
 const loopedBrands = [...brands, ...brands];
 
@@ -12,7 +13,7 @@ export function BrandCarousel() {
         <div className="mb-10 max-w-2xl sm:mb-12">
           <p className="text-xs uppercase tracking-[0.3em] text-neutral-400">Past Partnerships</p>
           <h2 className="mt-3 text-3xl font-semibold tracking-[-0.03em] text-neutral-900 sm:text-4xl lg:text-5xl">
-            Brands I’ve worked with
+            Brands I’ve <span className={`${signatureFont.className} text-[#F7C948] text-6xl`}>worked</span> with
           </h2>
           <p className="mt-4 max-w-xl text-sm leading-6 text-neutral-600 sm:text-base">
             A few of the brands I’ve collaborated with across YouTube, short-form content, and creator-focused campaigns.
