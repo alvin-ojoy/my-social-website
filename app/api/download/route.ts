@@ -15,7 +15,6 @@ function getClientIp(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
-  console.log("POST /api/download hit");
   try {
     const ip = getClientIp(request);
     const limit = checkRateLimit(`download:${ip}`);
