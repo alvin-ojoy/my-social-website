@@ -1,4 +1,5 @@
 import { Resource } from '@/content/resources';
+import { DownloadButton } from '@/components/ui/download-button';
 
 export function ResourceCard({ resource }: { resource: Resource }) {
   return (
@@ -13,15 +14,9 @@ export function ResourceCard({ resource }: { resource: Resource }) {
         {resource.description}
       </p>
 
-      <div className="mt-6 flex items-center justify-between">
+      <div className="mt-6 flex items-center justify-between gap-4">
         <span className="text-sm text-neutral-500">{resource.priceLabel}</span>
-
-        <a
-          href={`/api/download?slug=${resource.slug}`}
-          className="rounded-xl border border-neutral-300 px-4 py-2 text-sm text-neutral-900 transition hover:bg-neutral-100"
-        >
-          Download
-        </a>
+        <DownloadButton slug={resource.slug} title={resource.title} />
       </div>
     </article>
   );

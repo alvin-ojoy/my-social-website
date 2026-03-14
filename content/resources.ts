@@ -6,6 +6,7 @@ export type Resource = {
   priceLabel: 'Free';
   fileName: string;
   featured?: boolean;
+  isPublished?: boolean;
 };
 
 export const resources: Resource[] = [
@@ -17,6 +18,7 @@ export const resources: Resource[] = [
     priceLabel: 'Free',
     fileName: 'solo-creator-shot-list.pdf',
     featured: true,
+    isPublished: true,
   },
   {
     slug: 'editing-checklist',
@@ -26,6 +28,7 @@ export const resources: Resource[] = [
     priceLabel: 'Free',
     fileName: 'editing-checklist.pdf',
     featured: true,
+    isPublished: true,
   },
   {
     slug: 'desk-setup-guide',
@@ -34,5 +37,6 @@ export const resources: Resource[] = [
     category: 'Desk Setup',
     priceLabel: 'Free',
     fileName: 'desk-setup-guide.pdf',
+    isPublished: true,
   },
 ];
