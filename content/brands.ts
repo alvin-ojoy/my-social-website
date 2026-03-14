@@ -9,6 +9,7 @@ export const brands: Brand[] = [
   { name: 'Zhiyun', logo: '/images/brands/zhiyun.png' },
   { name: 'Insta360', logo: '/images/brands/insta360.svg' },
   { name: 'iFootage', logo: '/images/brands/ifootage.webp' },
+  { name: 'EpidemicSound', logo: '/images/brands/epidemicsound.webp' },
   { name: 'Sirui', logo: '/images/brands/sirui.png' },
   { name: 'Dehancer', logo: '/images/brands/dehancer.jpeg' },
   { name: 'Ulanzi', logo: '/images/brands/ulanzi.webp' },

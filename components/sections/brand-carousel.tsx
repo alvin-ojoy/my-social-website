@@ -16,7 +16,7 @@ export function BrandCarousel() {
             Brands I’ve <span className={`${signatureFont.className} text-[#F7C948] text-6xl`}>worked</span> with
           </h2>
           <p className="mt-4 max-w-xl text-sm leading-6 text-neutral-600 sm:text-base">
-            A few of the brands I’ve collaborated with across YouTube, short-form content, and creator-focused campaigns.
+            A few of the brands I’ve collaborated with across YouTube, Instagram, and Tiktok campaigns.
           </p>
         </div>
 
