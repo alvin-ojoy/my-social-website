@@ -1,6 +1,8 @@
-import crypto from 'crypto';
+import crypto from "crypto";
 
-const DOWNLOAD_SECRET = process.env.DOWNLOAD_TOKEN_SECRET || 'dev-secret-change-me';
+const DOWNLOAD_SECRET =
+  process.env.DOWNLOAD_TOKEN_SECRET || "dev-secret-change-me";
+
 const TOKEN_TTL_MS = 1000 * 60 * 5;
 
 type TokenPayload = {
@@ -9,11 +11,11 @@ type TokenPayload = {
 };
 
 function encode(data: string) {
-  return Buffer.from(data).toString('base64url');
+  return Buffer.from(data).toString("base64url");
 }
 
 function decode(data: string) {
-  return Buffer.from(data, 'base64url').toString('utf8');
+  return Buffer.from(data, "base64url").toString("utf8");
 }
 
 export function createDownloadToken(slug: string) {
@@ -23,20 +25,26 @@ export function createDownloadToken(slug: string) {
   };
 
   const payloadString = JSON.stringify(payload);
-  const signature = crypto.createHmac('sha256', DOWNLOAD_SECRET).update(payloadString).digest('base64url');
+  const signature = crypto
+    .createHmac("sha256", DOWNLOAD_SECRET)
+    .update(payloadString)
+    .digest("base64url");
 
   return `${encode(payloadString)}.${signature}`;
 }
 
 export function verifyDownloadToken(token: string) {
-  const [encodedPayload, signature] = token.split('.');
+  const [encodedPayload, signature] = token.split(".");
 
   if (!encodedPayload || !signature) {
     return { valid: false as const };
   }
 
   const payloadString = decode(encodedPayload);
-  const expected = crypto.createHmac('sha256', DOWNLOAD_SECRET).update(payloadString).digest('base64url');
+  const expected = crypto
+    .createHmac("sha256", DOWNLOAD_SECRET)
+    .update(payloadString)
+    .digest("base64url");
 
   if (signature !== expected) {
     return { valid: false as const };

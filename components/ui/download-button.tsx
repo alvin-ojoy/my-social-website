@@ -38,11 +38,24 @@ export function DownloadButton({ slug, title, label = 'Download' }: Props) {
         }),
       });
 
-      const data = await response.json();
+      let data: any = null;
+
+      const contentType = response.headers.get("content-type");
+
+      if (contentType && contentType.includes("application/json")) {
+        data = await response.json();
+      } else {
+        const text = await response.text();
+        throw new Error(
+          text.startsWith("<!DOCTYPE")
+          ? "The download endpoint returned an HTML error page."
+          : "Download failed."
+        );
+      }
 
       if (!response.ok || !data.url) {
-        throw new Error(data.error || 'Download failed.');
-      }
+        throw new Error(data.error || "Download failed.");
+      } 
 
       setOpen(false);
       window.location.href = data.url;

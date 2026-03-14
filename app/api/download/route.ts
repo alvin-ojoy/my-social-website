@@ -4,6 +4,8 @@ import { checkRateLimit } from '@/lib/rate-limit';
 import { createDownloadToken } from '@/lib/download-token';
 import { downloadRequestSchema } from '@/lib/validations/download';
 
+console.log("download route module loaded");
+
 function getClientIp(request: NextRequest) {
   const forwarded = request.headers.get('x-forwarded-for');
   if (forwarded) {
@@ -13,6 +15,7 @@ function getClientIp(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
+  console.log("POST /api/download hit");
   try {
     const ip = getClientIp(request);
     const limit = checkRateLimit(`download:${ip}`);
@@ -59,7 +62,8 @@ export async function POST(request: NextRequest) {
       ok: true,
       url: `/api/download/file?token=${token}`,
     });
-  } catch {
-    return NextResponse.json({ error: 'Something went wrong.' }, { status: 500 });
-  }
+    } catch (error) {
+      console.error("Download route error:", error);
+      return NextResponse.json({ error: "Something went wrong." }, { status: 500 });
+    }
 }
