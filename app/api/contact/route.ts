@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
     }
 
     await resend.emails.send({
-      from: 'Website Contact <contact@alvinojoy.com>',
+      from: `Alvin Ojoy <${process.env.RESEND_FROM_EMAIL}>`,
       to: process.env.CONTACT_TO_EMAIL,
       subject: `New ${parsed.data.inquiryType} inquiry from ${parsed.data.name}`,
       replyTo: parsed.data.email,
