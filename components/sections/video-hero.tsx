@@ -1,6 +1,6 @@
 export function VideoHero() {
   return (
-    <section className="relative h-[80vh] w-full overflow-hidden">
+    <section className="relative h-[70vh] w-full overflow-hidden">
       <video
         autoPlay
         muted

@@ -13,7 +13,7 @@ export function AboutIntro() {
             </p>
 
             <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-neutral-900 sm:text-4xl lg:text-5xl">
-              Content creation, tech reviews, and solo <span className='font-signature text-[#F7C948] text-6xl'>filmmaking</span>.
+              Content creation, tech reviews, and <span className='font-signature text-[#F7C948] text-6xl'>solo</span> filmmaking.
             </h2>
 
             <p className="mt-6 text-base leading-8 text-neutral-600 sm:text-lg">
@@ -50,7 +50,7 @@ export function AboutIntro() {
           <div className="relative mx-auto w-full max-w-md">
             <div className="group overflow-hidden rounded-[32px] border border-neutral-200 bg-white shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
               <Image
-                src="/images/profile2.jpg"
+                src="/images/profile1.jpg"
                 alt="Alvin Ojoy"
                 width={600}
                 height={700}
