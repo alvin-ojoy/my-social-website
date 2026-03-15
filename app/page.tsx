@@ -1,3 +1,4 @@
+import { AboutIntro } from '@/components/sections/about-intro';
 import { FeaturedResources } from '@/components/sections/featured-resources';
 import { BrandCarousel } from '@/components/sections/brand-carousel';
 import { VideoHero } from '@/components/sections/video-hero';
@@ -8,6 +9,7 @@ export default function HomePage() {
   return (
     <>
       <VideoHero />
+      <AboutIntro />
       <BrandCarousel />
       <SocialStrip />
       <FeaturedResources />
