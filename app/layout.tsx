@@ -3,6 +3,7 @@ import './globals.css';
 import { siteConfig } from '@/content/site';
 import { SiteHeader } from '@/components/layout/site-header';
 import { SiteFooter } from '@/components/layout/site-footer';
+import { Analytics } from "@vercel/analytics/next"
 import { Covered_By_Your_Grace } from "next/font/google";
 import { Space_Grotesk } from "next/font/google";
 
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
+        <Analytics/>
       </body>
     </html>
   );
