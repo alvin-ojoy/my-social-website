@@ -28,7 +28,7 @@ export function SiteHeader() {
           <Link
             href="/"
             onClick={() => setOpen(false)}
-            className="font-signature text-3xl text-[#F7C948]"
+            className="font-signature text-3xl text-neutral-900"
           >
             Alvin Ojoy
           </Link>
