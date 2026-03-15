@@ -29,3 +29,7 @@ body {
     transform: translateX(-20%);
   }
 }
+
+.font-signature {
+  font-family: var(--font-signature);
+}

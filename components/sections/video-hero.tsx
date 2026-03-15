@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { signatureFont } from "@/app/layout";
 
 export function VideoHero() {
   return (
@@ -25,7 +24,7 @@ export function VideoHero() {
           <h1 className="max-w-4xl text-5xl font-semibold leading-tight text-white md:text-7xl">
             Create{" "}
             <span
-              className={`${signatureFont.className} inline-block -rotate-2 text-7xl text-[#F7C948] md:text-8xl`}
+              className="font-signature inline-block -rotate-2 text-7xl text-[#F7C948] md:text-8xl"
             >
               BETTER
             </span>{" "}
