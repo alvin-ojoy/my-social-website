@@ -8,8 +8,19 @@ export function FeaturedProducts() {
   const featured = products.filter((product) => product.isPublished);
 
   return (
-    <section className="py-20 sm:py-24">
-      <Container>
+    <section className="relative py-20 sm:py-24 overflow-hidden">
+      <Image
+        src="/images/backgrounds/featured-product.jpg"
+        alt=""
+        fill
+        className="object-cover opacity-20"
+        priority
+      />
+        
+      {/* overlay */}
+      <div className="absolute inset-0 bg-white/10" />
+
+      <Container className="relative z-10">
         <div className="mb-10 flex items-end justify-between gap-6">
           <div className="max-w-2xl">
             <p className="text-xs uppercase tracking-[0.3em] text-neutral-400">

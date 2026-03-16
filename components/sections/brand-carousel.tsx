@@ -7,13 +7,30 @@ const loopedBrands = [...brands, ...brands];
 
 export function BrandCarousel() {
   return (
-    <section className="py-16 sm:py-20">
-      <Container>
+    <section className="relative py-16 sm:py-20 overflow-hidden">
+
+      {/* Background image */}
+      <Image
+        src="/images/backgrounds/brand-section.jpg"
+        alt=""
+        fill
+        className="object-cover opacity-20"
+        priority
+      />
+
+      {/* overlay */}
+      <div className="absolute inset-0 bg-white/50" />
+
+      <Container className="relative z-10">
         <div className="mb-10 max-w-2xl sm:mb-12">
-          <p className="text-xs uppercase tracking-[0.3em] text-neutral-400">Past Partnerships</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-neutral-400">
+            Past Partnerships
+          </p>
+
           <h2 className="mt-3 text-3xl font-semibold tracking-[-0.03em] text-neutral-900 sm:text-4xl lg:text-5xl">
             Brands I’ve <span className="font-signature text-[#F7C948] text-6xl">worked</span> with
           </h2>
+
           <p className="mt-4 max-w-xl text-sm leading-6 text-neutral-600 sm:text-base">
             A few of the brands I’ve collaborated with across YouTube, Instagram, and Tiktok campaigns.
           </p>
