@@ -2,7 +2,7 @@ import path from 'path';
 import { promises as fs } from 'fs';
 import mime from 'mime-types';
 import { NextRequest, NextResponse } from 'next/server';
-import { resources } from '@/content/resources';
+import { products } from '@/content/products';
 import { verifyDownloadToken } from '@/lib/download-token';
 
 export async function GET(request: NextRequest) {
@@ -19,7 +19,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'Invalid or expired token.' }, { status: 403 });
     }
 
-    const resource = resources.find((item) => item.slug === result.slug && item.isPublished);
+    const resource = products.find((item) => item.slug === result.slug && item.isPublished);
 
     if (!resource) {
       return NextResponse.json({ error: 'Resource not found.' }, { status: 404 });

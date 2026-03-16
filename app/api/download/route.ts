@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { resources } from '@/content/resources';
+import { products } from '@/content/products';
 import { checkRateLimit } from '@/lib/rate-limit';
 import { createDownloadToken } from '@/lib/download-token';
 import { downloadRequestSchema } from '@/lib/validations/download';
@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ ok: true }, { status: 200 });
     }
 
-    const resource = resources.find(
+    const resource = products.find(
       (item) => item.slug === parsed.data.slug && item.isPublished
     );
 
