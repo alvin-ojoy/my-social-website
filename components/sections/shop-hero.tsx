@@ -6,7 +6,7 @@ export function ShopHero() {
     <section className="relative overflow-hidden">
       <div className="relative h-[280px] sm:h-[340px] lg:h-[420px]">
         <Image
-          src="/images/shop/shop-banner2.jpg"
+          src="/images/shop/shop-banner.jpg"
           alt="Shop banner"
           fill
           priority

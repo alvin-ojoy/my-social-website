@@ -50,7 +50,7 @@ export function AboutIntro() {
           <div className="relative mx-auto w-full max-w-md">
             <div className="group overflow-hidden rounded-[32px] border border-neutral-200 bg-white shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
               <Image
-                src="/images/profile1.jpg"
+                src="/images/profile.jpg"
                 alt="Alvin Ojoy"
                 width={600}
                 height={700}
