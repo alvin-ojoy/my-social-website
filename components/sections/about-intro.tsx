@@ -13,7 +13,7 @@ export function AboutIntro() {
             </p>
 
             <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-neutral-900 sm:text-4xl lg:text-5xl">
-              Content creation, tech reviews, and <span className='font-signature text-[#F7C948] text-6xl'>solo</span> filmmaking.
+              Content creation, tech reviews, and solo <span className='font-signature text-[#F7C948] lg:text-6xl md:text-6xl sm:text-3xl'>filmmaking</span>. 
             </h2>
 
             <p className="mt-6 text-base leading-8 text-neutral-600 sm:text-lg">
