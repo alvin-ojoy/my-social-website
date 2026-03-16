@@ -27,7 +27,7 @@ export function FeaturedProducts() {
               Shop
             </p>
             <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-neutral-900 sm:text-4xl lg:text-5xl">
-              Digital products built from my real workflow
+              Digital products <span className="font-signature text-[#F7C948] text-5xl">built</span> from my real workflow
             </h2>
             <p className="mt-4 text-base leading-7 text-neutral-600">
               Practical creator tools for filming, editing, and building better
