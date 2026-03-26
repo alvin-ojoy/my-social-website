@@ -18,5 +18,14 @@ export const products: Product[] = [
     fileName: "AO-S-LOG3-FREE.cube.zip",
     coverImage: "/images/products/sony-slog3-free-lut.png",
     isPublished: true,
+  },{
+    slug: "vertical-overlay-all-socials",
+    title: "Vertical Safezones (All Socials)",
+    description:
+      "Easy to use safezone PNG overlay for your vertical videos for any social media platform.",
+    priceLabel: "Free",
+    fileName: "Free_Socials_Overlay_AO_strong.png.zip",
+    coverImage: "/images/products/free-overlay.png",
+    isPublished: true,
   },
 ];
