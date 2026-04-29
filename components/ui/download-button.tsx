@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { DownloadModal } from '@/components/ui/download-modal';
+import type { DownloadFormInput } from '@/lib/validations/download';
 
 type Props = {
   slug: string;
@@ -9,18 +10,12 @@ type Props = {
   label?: string;
 };
 
-type DownloadPayload = {
-  name: string;
-  email: string;
-  website?: string;
-};
-
 export function DownloadButton({ slug, title, label = 'Download' }: Props) {
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  async function handleDownload(values: DownloadPayload) {
+  async function handleDownload(values: DownloadFormInput) {
     try {
       setLoading(true);
       setError(null);
@@ -34,11 +29,12 @@ export function DownloadButton({ slug, title, label = 'Download' }: Props) {
           slug,
           name: values.name,
           email: values.email,
+          marketingConsent: values.marketingConsent,
           website: values.website || '',
         }),
       });
 
-      let data: any = null;
+      let data: { error?: string; url?: string } | undefined;
 
       const contentType = response.headers.get("content-type");
 
@@ -53,8 +49,8 @@ export function DownloadButton({ slug, title, label = 'Download' }: Props) {
         );
       }
 
-      if (!response.ok || !data.url) {
-        throw new Error(data.error || "Download failed.");
+      if (!response.ok || !data?.url) {
+        throw new Error(data?.error || "Download failed.");
       } 
 
       setOpen(false);

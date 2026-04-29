@@ -3,15 +3,10 @@
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
-
-const schema = z.object({
-  name: z.string().min(2, 'Please enter your name.').max(100),
-  email: z.string().email('Please enter a valid email address.').max(200),
-  website: z.string().max(0).optional(),
-});
-
-type FormValues = z.infer<typeof schema>;
+import {
+  downloadFormSchema,
+  type DownloadFormInput,
+} from '@/lib/validations/download';
 
 type Props = {
   open: boolean;
@@ -19,7 +14,7 @@ type Props = {
   loading: boolean;
   error: string | null;
   onClose: () => void;
-  onSubmit: (values: FormValues) => Promise<void>;
+  onSubmit: (values: DownloadFormInput) => Promise<void>;
 };
 
 export function DownloadModal({
@@ -35,11 +30,12 @@ export function DownloadModal({
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<FormValues>({
-    resolver: zodResolver(schema),
+  } = useForm<DownloadFormInput>({
+    resolver: zodResolver(downloadFormSchema),
     defaultValues: {
       name: '',
       email: '',
+      marketingConsent: false,
       website: '',
     },
   });
@@ -120,6 +116,26 @@ export function DownloadModal({
             autoComplete="off"
             className="hidden"
           />
+
+          <div>
+            <label className="flex items-start gap-3 rounded-2xl border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm leading-6 text-neutral-700">
+              <input
+                type="checkbox"
+                {...register('marketingConsent')}
+                className="mt-1 h-4 w-4 rounded border-neutral-300 text-black"
+              />
+              <span>
+                I agree to receive occasional emails from Alvin Ojoy about new
+                downloads, creator resources, and product updates. You can
+                unsubscribe anytime.
+              </span>
+            </label>
+            {errors.marketingConsent ? (
+              <p className="mt-2 text-xs text-red-600">
+                {errors.marketingConsent.message}
+              </p>
+            ) : null}
+          </div>
 
           {error ? <p className="text-sm text-red-600">{error}</p> : null}
 
