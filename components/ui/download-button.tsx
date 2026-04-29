@@ -3,14 +3,21 @@
 import { useState } from 'react';
 import { DownloadModal } from '@/components/ui/download-modal';
 import type { DownloadFormInput } from '@/lib/validations/download';
+import { cn } from '@/lib/utils';
 
 type Props = {
   slug: string;
   title: string;
   label?: string;
+  className?: string;
 };
 
-export function DownloadButton({ slug, title, label = 'Download' }: Props) {
+export function DownloadButton({
+  slug,
+  title,
+  label = 'Download',
+  className,
+}: Props) {
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -67,7 +74,10 @@ export function DownloadButton({ slug, title, label = 'Download' }: Props) {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="rounded-xl border border-neutral-300 px-4 py-2 text-sm text-neutral-900 transition hover:bg-neutral-100"
+        className={cn(
+          "inline-flex items-center justify-center rounded-2xl bg-neutral-900 px-4 py-3 text-sm font-medium text-white shadow-[0_14px_35px_rgba(0,0,0,0.14)] transition hover:bg-[#F7C948] hover:text-neutral-950",
+          className
+        )}
       >
         {label}
       </button>

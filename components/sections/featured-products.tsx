@@ -21,7 +21,7 @@ export function FeaturedProducts() {
       <div className="absolute inset-0 bg-white/10" />
 
       <Container className="relative z-10">
-        <div className="mb-10 flex items-end justify-between gap-6">
+        <div className="mb-10 flex flex-col gap-6 sm:mb-12 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
             <p className="text-xs uppercase tracking-[0.3em] text-neutral-400">
               Shop
@@ -37,7 +37,7 @@ export function FeaturedProducts() {
 
           <Link
             href="/shop"
-            className="hidden rounded-2xl border border-neutral-300 px-5 py-3 text-sm font-medium text-neutral-900 transition hover:bg-neutral-100 sm:inline-flex"
+            className="hidden items-center justify-center rounded-2xl border border-neutral-300 px-5 py-3 text-sm font-medium text-neutral-900 transition hover:bg-neutral-100 sm:inline-flex sm:min-w-[144px]"
           >
             Visit Shop
           </Link>
@@ -56,8 +56,8 @@ export function FeaturedProducts() {
                 />
               </div>
 
-              <div className="mt-6 flex items-start justify-between gap-4">
-                <div>
+              <div className="mt-6 flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
+                <div className="min-w-0 flex-1">
                   <h3 className="text-xl font-semibold uppercase tracking-[-0.02em] text-neutral-900">
                     {product.title}
                   </h3>
@@ -72,7 +72,8 @@ export function FeaturedProducts() {
                 <DownloadButton
                   slug={product.slug}
                   title={product.title}
-                  label="Get Product"
+                  label="Download"
+                  className="w-full sm:w-auto sm:min-w-[152px]"
                 />
               </div>
             </article>
@@ -82,7 +83,7 @@ export function FeaturedProducts() {
         <div className="mt-10 sm:hidden">
           <Link
             href="/shop"
-            className="inline-flex rounded-2xl border border-neutral-300 px-5 py-3 text-sm font-medium text-neutral-900 transition hover:bg-neutral-100"
+            className="inline-flex w-full items-center justify-center rounded-2xl border border-neutral-300 px-5 py-3 text-sm font-medium text-neutral-900 transition hover:bg-neutral-100"
           >
             Visit Shop
           </Link>

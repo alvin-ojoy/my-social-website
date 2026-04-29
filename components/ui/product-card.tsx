@@ -4,7 +4,7 @@ import { DownloadButton } from "@/components/ui/download-button";
 
 export function ProductCard({ product }: { product: Product }) {
   return (
-    <article className="group rounded-[28px] bg-transparent p-2">
+    <article className="group rounded-[28px] bg-transparent">
       <div className="flex items-center justify-center rounded-[28px] bg-[#fcfbfc] p-8 sm:p-10">
         <Image
           src={product.coverImage}
@@ -15,8 +15,8 @@ export function ProductCard({ product }: { product: Product }) {
         />
       </div>
 
-      <div className="mt-6 flex items-start justify-between gap-4">
-        <div>
+      <div className="mt-6 flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
+        <div className="min-w-0 flex-1">
           <h2 className="text-xl font-semibold uppercase tracking-[-0.02em] text-neutral-900">
             {product.title}
           </h2>
@@ -29,7 +29,8 @@ export function ProductCard({ product }: { product: Product }) {
         <DownloadButton
           slug={product.slug}
           title={product.title}
-          label="Get Product"
+          label="Download"
+          className="w-full sm:w-auto sm:min-w-[152px]"
         />
       </div>
     </article>
