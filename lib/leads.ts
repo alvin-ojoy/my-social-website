@@ -93,15 +93,22 @@ async function fetchSupabase<T>(
     return undefined as T;
   }
 
-  return (await response.json()) as T;
+  const text = await response.text();
+
+  if (!text.trim()) {
+    return undefined as T;
+  }
+
+  return JSON.parse(text) as T;
 }
 
 async function getExistingLead(env: LeadCaptureEnv, email: string) {
   const encodedEmail = encodeURIComponent(email);
-  const rows = await fetchSupabase<LeadRow[]>(
-    env,
-    `download_leads?select=email,name,download_count,first_download_slug,first_downloaded_at,last_download_slug,last_downloaded_at&email=eq.${encodedEmail}&limit=1`
-  );
+  const rows =
+    (await fetchSupabase<LeadRow[] | undefined>(
+      env,
+      `download_leads?select=email,name,download_count,first_download_slug,first_downloaded_at,last_download_slug,last_downloaded_at&email=eq.${encodedEmail}&limit=1`
+    )) ?? [];
 
   return rows[0] ?? null;
 }
