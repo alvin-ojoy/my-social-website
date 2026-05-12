@@ -3,6 +3,7 @@ import "./globals.css";
 import { Covered_By_Your_Grace } from "next/font/google";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
+import { BuyMeACoffeeWidget } from "@/components/buy-me-a-coffee-widget";
 import { siteConfig } from "@/content/site";
 
 const signatureFont = Covered_By_Your_Grace({
@@ -28,6 +29,7 @@ export default function RootLayout({
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
+        <BuyMeACoffeeWidget />
       </body>
     </html>
   );

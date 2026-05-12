@@ -19,13 +19,13 @@ export const products: Product[] = [
     coverImage: "/images/products/sony-slog3-free-lut.png",
     isPublished: true,
   },{
-    slug: "vertical-overlay-all-socials",
-    title: "Vertical Safezones (All Socials)",
+    slug: "vertical-overlay-IG",
+    title: "Instagram Reel Safezone Overlay",
     description:
       "Easy to use safezone PNG overlay for your vertical videos for any social media platform.",
     priceLabel: "Free",
-    fileName: "Free_Socials_Overlay_AO_strong.png.zip",
-    coverImage: "/images/products/free-overlay.png",
+    fileName: "Free_IG_Safe_Zone_Overlay_2026.zip",
+    coverImage: "/images/products/ig-safezone-overlay-2026.png",
     isPublished: true,
   },
 ];

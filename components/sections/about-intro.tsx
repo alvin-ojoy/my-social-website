@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { Container } from '@/components/ui/container';
 
@@ -6,8 +5,7 @@ export function AboutIntro() {
   return (
     <section className="py-20 sm:py-24">
       <Container>
-        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div className="max-w-3xl">
+        <div className="max-w-3xl">
             <p className="text-xs uppercase tracking-[0.3em] text-neutral-400">
               About Alvin
             </p>
@@ -45,21 +43,6 @@ export function AboutIntro() {
                 More About Me
               </Link>
             </div>
-          </div>
-
-          <div className="relative mx-auto w-full max-w-md">
-            <div className="group overflow-hidden rounded-[32px] border border-neutral-200 bg-white shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
-              <Image
-                src="/images/profile.jpg"
-                alt="Alvin Ojoy"
-                width={600}
-                height={700}
-                sizes="(min-width: 1024px) 400px, 100vw"
-                className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]"
-                priority
-              />
-            </div>
-          </div>
         </div>
       </Container>
     </section>
