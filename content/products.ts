@@ -30,3 +30,9 @@ export const products: Product[] = [
     isPublished: true,
   },
 ];
+
+export const publishedProducts = products.filter((product) => product.isPublished);
+
+export function getProductBySlug(slug: string) {
+  return publishedProducts.find((product) => product.slug === slug);
+}
