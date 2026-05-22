@@ -7,6 +7,7 @@ import {
   downloadFormSchema,
   type DownloadFormInput,
 } from '@/lib/validations/download';
+import { socialLinks } from '@/content/social-links';
 
 type Props = {
   open: boolean;
@@ -25,6 +26,8 @@ export function DownloadModal({
   onClose,
   onSubmit,
 }: Props) {
+  const youtubeLink = socialLinks.find((link) => link.label === 'YouTube')?.href;
+
   const {
     register,
     handleSubmit,
@@ -81,6 +84,29 @@ export function DownloadModal({
             Enter your name and email to access this free resource.
           </p>
         </div>
+
+        {youtubeLink ? (
+          <div className="mb-6 rounded-[24px] border border-[#f3d38b] bg-[#fff7df] p-4">
+            <p className="text-xs uppercase tracking-[0.28em] text-[#b07a00]">
+              Support the Channel
+            </p>
+            <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <p className="max-w-xs text-sm leading-6 text-neutral-700">
+                If you enjoy these free resources, subscribing on YouTube helps
+                me keep making more of them.
+              </p>
+
+              <a
+                href={youtubeLink}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center rounded-2xl bg-[#F7C948] px-4 py-3 text-sm font-medium text-neutral-950 transition hover:bg-[#e9b933]"
+              >
+                Click to Subscribe
+              </a>
+            </div>
+          </div>
+        ) : null}
 
         <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
           <div>
