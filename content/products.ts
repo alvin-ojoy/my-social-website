@@ -10,15 +10,16 @@ export type Product = {
 
 export const products: Product[] = [
   {
-    slug: "sony-slog3-free-lut",
-    title: "Sony S-Log3 Free LUT",
+    slug: "cinematic-video-workflow-guide",
+    title: "Cinematic Video Workflow Guide",
     description:
-      "A clean starting-point LUT for Sony S-Log3 footage, designed for quick cinematic conversion and easy grading.",
+      "A one-page roadmap for planning, shooting, and editing more intentional cinematic videos.",
     priceLabel: "Free",
-    fileName: "AO-S-LOG3-FREE.cube.zip",
-    coverImage: "/images/products/sony-slog3-free-lut.png",
+    fileName: "cinematic-video-workflow-guide.pdf",
+    coverImage: "/images/products/cinematic-video-workflow-guide.png",
     isPublished: true,
-  },{
+  },
+  {
     slug: "vertical-overlay-IG",
     title: "Instagram Reel Safezone Overlay",
     description:

@@ -5,14 +5,16 @@ import { DownloadButton } from "@/components/ui/download-button";
 export function ProductCard({ product }: { product: Product }) {
   return (
     <article className="group rounded-[28px] bg-transparent">
-      <div className="flex items-center justify-center rounded-[28px] bg-[#fcfbfc] p-8 sm:p-10">
+      <div className="flex min-h-[360px] items-center justify-center rounded-[28px] bg-[#fcfbfc] p-8 sm:min-h-[420px] sm:p-10">
+        <div className="relative h-[240px] w-full max-w-[320px] sm:h-[300px] sm:max-w-[380px]">
         <Image
           src={product.coverImage}
           alt={product.title}
-          width={320}
-          height={420}
-          className="h-auto w-[180px] object-contain transition duration-500 group-hover:scale-[1.02] sm:w-[220px]"
+          fill
+          sizes="(max-width: 640px) 320px, 380px"
+          className="object-contain transition duration-500 group-hover:scale-[1.02]"
         />
+        </div>
       </div>
 
       <div className="mt-6 flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
